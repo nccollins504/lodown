@@ -1,0 +1,26 @@
+{
+  "name": "lodown-nccollins",
+  "version": "1.0.1",
+  "description": "my first library",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover _mocha -- test/ -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nccollins504/nccollins504.github.io.git"
+  },
+  "author": "Nathan Collins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nccollins504/nccollins504.github.io/issues"
+  },
+  "homepage": "https://github.com/nccollins504/nccollins504.github.io#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "i": "^0.3.6",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.2.2",
+    "sinon": "^7.5.0"
+  }
+}
