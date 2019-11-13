@@ -75,7 +75,7 @@ module.exports.typeOf = typeOf;
  * 
  * @param {array} array: An array
  * @param {number} number: A number
- * @return {value}: If <number> is not given or not a number, return just the first element in <array>.
+ * @return {index value}: If <number> is not given or not a number, return just the first element in <array>.
 *   Otherwise, return the first <number> items of <array>
  **/
 function first(array, number) {
@@ -90,7 +90,7 @@ module.exports.first = first;
  * 
  * @param {array} array: An array
  * @param {number} number: A number
- * @return {value}: If <number> is not given or not a number, return just the last element in <array>.
+ * @return {index value}: If <number> is not given or not a number, return just the last element in <array>.
 *   Otherwise, return the last <number> items of <array>
  **/
 function last(array, number) {
@@ -106,7 +106,7 @@ module.exports.last = last;
  * 
  * @param {array} array: An array
  * @param {value} number: A value
- * @return {value}:Return the index of <array> that is the first occurrance of <value>
+ * @return {number}:Return the index of <array> that is the first occurrance of <value>
  *  Return -1 if <value> is not in <array>
  **/
 function indexOf(array, value) {
@@ -120,7 +120,7 @@ module.exports.indexOf = indexOf;
  * 
  * @param {array} array: An array
  * @param {value} number: A value
- * @return {value}:Return true if <array> contains <value>. Return false otherwise
+ * @return {boolean}:Return true if <array> contains <value>. Return false otherwise
  **/
 function contains(array, value) {
    if(!value) {
@@ -133,7 +133,7 @@ module.exports.contains = contains;
  * unique: Return a new array of all elements from <array> with duplicates removed
  * 
  * @param {array} array: An array
- * @return {value}:Return a new array of all elements from <array> with duplicates removed
+ * @return {array}:Return a new array of all elements from <array> with duplicates removed
  **/
 function unique(array) {
  const uniqueArr = new Set(array);
@@ -146,7 +146,7 @@ module.exports.unique = unique;
  * 
  * @param {array} array: An array
  * @param {function} action: A function
- * @return {value}: return a new array of elements for which calling <function> returned true
+ * @return {array}: return a new array of elements for which calling <function> returned true
  **/
 function filter(array, action) {
     let arr = [];
@@ -165,7 +165,7 @@ module.exports.filter = filter;
  * 
  * @param {array} array: An array
  * @param {function} action: A function
- * @return {value}: return a new array of elements for which calling <function> returned false
+ * @return {array}: return a new array of elements for which calling <function> returned false
  **/
 function reject(array, action) {
        let arr = [];
@@ -185,7 +185,7 @@ module.exports.reject = reject;
  * 
  * @param {array} array: An array
  * @param {function} action: A function
- * @return {value}: Return an array that is made up of 2 sub arrays:
+ * @return {array}: Return an array that is made up of 2 sub arrays:
 *       An array that contains all the values for which <function> returned something truthy
 *       An array that contains all the values for which <function> returned something falsy
  **/
@@ -333,8 +333,8 @@ module.exports.some = some;
 *   After the last iteration, return the return value of the final <function> call
  * @param {array} array: An array
  * @param {function} func: A function
- * @param {seed} seed: A seed
- * @return {seed}: return the return value of the final <function> call
+ * @param {datatype} seed: A seed
+ * @return {mutable datatype}: return the return value of the final <function> call
 **/
 function reduce(array, func, seed) {
     let seedDefined = 0;
