@@ -161,6 +161,33 @@ function filter(array, action) {
 
 module.exports.filter = filter;
 /**
+ * map: call <function> for each element in <collection> passing the arguments:
+*        if <collection> is an array:
+*            the element, it's index, <collection>
+*        if <collection> is an object:
+*            the value, it's key, <collection>
+*       save the return value of each <function> call in a new array
+ * 
+ * @param {array} array: An array
+ * @param {function} callback: A function
+ * @return {array}: return the new array
+ **/
+function map(array, callback) {
+    var newArr = [];
+    if(Array.isArray(array)) {
+        for(var i = 0; i < array.length; i++) {
+            newArr.push(callback(array[i], i, array));
+        }
+    } else{
+        for(var key in array) {
+            newArr.push(callback(array[key], key, array));
+        }
+    }
+    return newArr;
+}
+
+module.exports.map = map;
+/**
  * reject: return a new array of elements for which calling <function> returned false
  * 
  * @param {array} array: An array
@@ -334,7 +361,7 @@ module.exports.some = some;
  * @param {array} array: An array
  * @param {function} func: A function
  * @param {datatype} seed: A seed
- * @return {mutable datatype}: return the return value of the final <function> call
+ * @return {number or array}: A number or an array representing the final function call of the array.
 **/
 function reduce(array, func, seed) {
     let seedDefined = 0;
